@@ -1,0 +1,204 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #dcdcdc; /* Light gray text for readability on dark background */
+    background-color: #121212; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Wrapper styling with flexible width */
+.wrapper {
+    background-color: #222; /* Darker background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* Images on the right */
+}
+
+/* Image styling, aligned to the right */
+.wrapper img {
+    width: 100%;
+    height: auto;
+    flex: 1 1 300px; /* Takes up one part of the flex space */
+    max-width: 40%; /* Limits width on larger screens */
+    object-fit: cover;
+}
+
+/* Text box styling aligned to the left */
+.text-box {
+    flex: 1 1 500px; /* Takes up remaining flex space */
+    padding: 20px;
+    color: #dcdcdc; /* Light gray text color */
+}
+
+.text-box h2 {
+    font-size: 2rem;
+    color: #7a42f4; /* Deep purple heading */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Styling for the list with columns */
+.text-box p {
+    font-size: 1rem;
+    color: #dcdcdc; /* Light gray text */
+    line-height: 1.8;
+    column-count: 2;
+    column-gap: 20px;
+    text-align: left;
+}
+
+/* Extra information with headings */
+.text-box p::before {
+    content: "CARPINTERÍA\n\n";
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #7a42f4;
+}
+
+.text-box p::after {
+    content: "\n\nHorario: Martes y Jueves\nMensualidad: 100 Bs/módulo\nMaterial: Cada estudiante";
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #7a42f4;
+}
+
+/* Section for comentarios */
+.comentarios {
+    padding: 20px;
+    background-color: #333; /* Slightly lighter dark background */
+    border-top: 2px solid #7a42f4;
+    width: 100%;
+}
+
+.comentarios h2 {
+    font-size: 1.5rem;
+    color: #7a42f4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.comentarios-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #dcdcdc;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #222;
+    color: #dcdcdc;
+    width: 100%;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: #7a42f4;
+}
+
+/* Button styling */
+.btn-comentario {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #7a42f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comentario:hover {
+    background-color: #5a32b0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Stack image and text-box vertically on smaller screens */
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .text-box p {
+        column-count: 1; /* Single column for smaller screens */
+    }
+}
+/* Aplica estilo al botón */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #333; /* Color del texto */
+    background-color: #f9f9f9; /* Fondo del botón */
+    border: 2px solid #333; /* Borde del botón */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px; /* Borde redondeado del botón */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de sombreado en el borde */
+.btn::before, .btn::after {
+    content: "";
+    position: absolute;
+    background-color: #333;
+}
+
+/* Configuración de los recuadros superior e inferior */
+.btn::before {
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+}
+
+.btn::after {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+}
+
+/* Estilo al pasar el ratón */
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+    transition: 0.3s;
+}
+

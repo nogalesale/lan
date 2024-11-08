@@ -1,0 +1,218 @@
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #4a1e77; /* Deep purple color */
+    background-color: #f3e5f5; /* Light lavender background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Wrapper styling with flexible width */
+.wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1200px; /* Limits the width on large screens */
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Image styling, aligned to the right */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    flex: 1 1 30%; /* Occupies 30% of the width */
+    padding: 20px; /* Add some padding */
+    align-items: center; /* Center images in the container */
+}
+
+.image-container img {
+    width: 80%; /* Set width to 80% of container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Set a maximum height */
+    margin-bottom: 10px; /* Space between images */
+    object-fit: cover; /* Cover the area */
+}
+
+/* Text box styling aligned to the left */
+.text-box {
+    flex: 1 1 70%; /* Takes up remaining flex space */
+    padding: 20px;
+}
+
+.text-box h2 {
+    font-size: 2rem;
+    color: #7a42f4; /* Deep purple heading */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Styling for the list with columns */
+.text-box p {
+    border-color: #5a32b0;
+    font-size: 1rem;
+    color: #4a1e77; /* Deep purple text */
+    line-height: 1.8;
+    column-count: 2; /* Two columns for the list */
+    column-gap: 20px; /* Space between columns */
+}
+
+/* Extra information with headings */
+.text-box p::before {
+    content: "CORTE Y CONFECCIÓN\n\n";
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #7a42f4; /* Deep purple */
+}
+
+.text-box p::after {
+    content: "\n\nMensualidad: 100 Bs/mes\nHorario: Martes y Jueves\nMateriales: papel para moldes, tela, hilo. Deben traer un cuaderno.";
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #7a42f4; /* Deep purple */
+}
+
+/* Section for comentarios */
+.comentarios {
+    padding: 20px;
+    background-color: #f2e1f2; /* Light purple background */
+    border-top: 2px solid #7a42f4; /* Deep purple border */
+    width: 100%;
+}
+
+.comentarios h2 {
+    font-size: 1.5rem;
+    color: #4a1e77; /* Deep purple text */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.comentarios-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #4a1e77; /* Deep purple text */
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%; /* Full width */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: #7a42f4; /* Deep purple border on focus */
+}
+
+/* Button styling */
+.btn-comentario {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff; /* White text */
+    background-color: #7a42f4; /* Deep purple button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comentario:hover {
+    background-color: #5a32b0; /* Darker purple on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* Stack image and text-box vertically on smaller screens */
+    .wrapper {
+        flex-direction: column; /* Stack layout */
+    }
+
+    .text-box p {
+        column-count: 1; /* Single column for smaller screens */
+    }
+
+    .image-container {
+        align-items: center; /* Center images */
+        flex: 1 1 100%; /* Full width for images */
+    }
+
+    .image-container img {
+        width: 90%; /* Responsive image width */
+        max-height: 120px; /* Adjust height for smaller screens */
+    }
+}
+/* Aplica estilo al botón */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #333; /* Color del texto */
+    background-color: #f9f9f9; /* Fondo del botón */
+    border: 2px solid #333; /* Borde del botón */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px; /* Borde redondeado del botón */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de sombreado en el borde */
+.btn::before, .btn::after {
+    content: "";
+    position: absolute;
+    background-color: #333;
+}
+
+/* Configuración de los recuadros superior e inferior */
+.btn::before {
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+}
+
+.btn::after {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+}
+
+/* Estilo al pasar el ratón */
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+    transition: 0.3s;
+}
